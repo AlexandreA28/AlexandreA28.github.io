@@ -231,3 +231,8 @@ footer a {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+.stat-icon-img {
+    height: 35px;
+    width: auto;
+}
