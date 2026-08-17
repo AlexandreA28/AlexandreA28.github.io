@@ -3,7 +3,7 @@ import json
 import requests
 
 API_KEY = os.environ.get('ROOTME_API_KEY')
-PSEUDO = "sniper281"
+PSEUDO = "Celestia"
 
 if not API_KEY:
     print("Erreur : ROOTME_API_KEY introuvable.")
