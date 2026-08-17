@@ -231,8 +231,57 @@ footer a {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+/* --- LOGO TITRE ROOT-ME --- */
+.rootme-logo {
+    height: 120px; /* Ajuste cette valeur selon la taille de ton SVG */
+    vertical-align: -45%; /* Aligne le logo avec le texte */
+    margin-right: -10px; /* Espace entre le logo et le texte "Root Me" */
+}
 
+/* --- STATS ROOT-ME (Design en Cartes) --- */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* L'espace entre les deux cartes */
+    margin: 40px 0;
+}
+
+.stat-box {
+    background-color: #2c3e50; /* Le fond bleu-gris de la carte */
+    border: 1px solid #ff6b6b; /* La fine bordure rouge/corail */
+    border-radius: 12px; /* Les bords arrondis de la carte */
+    padding: 30px 40px;
+    width: 220px; /* Largeur fixe pour que les deux cartes fassent la même taille */
+    
+    /* On utilise flex pour tout centrer verticalement */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* Petite ombre douce sous la carte */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* L'image SVG tout en haut */
 .stat-icon-img {
-    height: 35px;
+    height: 55px; /* Taille du logo */
     width: auto;
+    margin-bottom: 20px; /* Espace entre le logo et le chiffre */
+}
+
+/* Le chiffre au centre */
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ff6b6b; /* La couleur rouge/corail de l'image */
+    line-height: 1;
+    margin-bottom: 15px; /* Espace entre le chiffre et le texte du bas */
+}
+
+/* Le texte en bas (PLACE / POINTS) */
+.stat-label {
+    font-size: 1rem;
+    color: #ffffff;
+    text-transform: uppercase; /* Met le texte en majuscules */
+    letter-spacing: 1.5px; /* Écarte un peu les lettres pour faire plus pro */
 }
