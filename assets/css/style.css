@@ -183,7 +183,6 @@ footer a {
     color: #333;
 }
 
-/* On s'assure que le bouton prenne toute la largeur pour être bien visible */
 .contact-form .btn {
     width: 100%;
     border: none;
@@ -233,55 +232,63 @@ footer a {
 }
 /* --- LOGO TITRE ROOT-ME --- */
 .rootme-logo {
-    height: 120px; /* Ajuste cette valeur selon la taille de ton SVG */
-    vertical-align: -45%; /* Aligne le logo avec le texte */
-    margin-right: -10px; /* Espace entre le logo et le texte "Root Me" */
+    height: 120px; 
+    vertical-align: -45%;
+    margin-right: -10px;
 }
 
 /* --- STATS ROOT-ME (Design en Cartes) --- */
 .stats-container {
     display: flex;
     justify-content: center;
-    gap: 30px; /* L'espace entre les deux cartes */
+    gap: 30px;
     margin: 40px 0;
 }
 
 .stat-box {
-    background-color: #2c3e50; /* Le fond bleu-gris de la carte */
-    border: 1px solid #ff6b6b; /* La fine bordure rouge/corail */
-    border-radius: 12px; /* Les bords arrondis de la carte */
+    background-color: #2c3e50;
+    border: 1px solid #ff6b6b;
+    border-radius: 12px;
     padding: 30px 40px;
-    width: 220px; /* Largeur fixe pour que les deux cartes fassent la même taille */
+    width: 220px;
     
-    /* On utilise flex pour tout centrer verticalement */
     display: flex;
     flex-direction: column;
     align-items: center;
     
-    /* Petite ombre douce sous la carte */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* L'image SVG tout en haut */
+.stat-value {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* L'image SVG */
 .stat-icon-img {
-    height: 55px; /* Taille du logo */
+    height: 40px;
     width: auto;
-    margin-bottom: 20px; /* Espace entre le logo et le chiffre */
+    margin-bottom: 0;
+    transform: translateY(-15%);
 }
 
 /* Le chiffre au centre */
 .stat-number {
     font-size: 2rem;
     font-weight: bold;
-    color: #ff6b6b; /* La couleur rouge/corail de l'image */
+    color: #ff6b6b;
     line-height: 1;
-    margin-bottom: 15px; /* Espace entre le chiffre et le texte du bas */
+    margin-bottom: 15px;
 }
 
 /* Le texte en bas (PLACE / POINTS) */
 .stat-label {
     font-size: 1.5rem;
     color: #ffffff;
-    text-transform: uppercase; /* Met le texte en majuscules */
-    letter-spacing: 1.5px; /* Écarte un peu les lettres pour faire plus pro */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
