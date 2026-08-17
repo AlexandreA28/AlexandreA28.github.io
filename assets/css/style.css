@@ -12,6 +12,18 @@ body {
     line-height: 1.6;
 }
 
+/* --- Taille p --- */
+#ctf p {
+    font-size: 1.2rem; /* Environ 19px, un peu plus grand */
+    line-height: 1.6;
+}
+
+/* --- Taille banderole --- */
+#ctf {
+    padding-top: 70px;    /* Espace au-dessus du titre "Root Me" */
+    padding-bottom: 70px; /* Espace en dessous du bouton "Write-Ups ICI" */
+}
+
 /* --- STRUCTURE DES SECTIONS --- */
 .section {
     padding: 80px 20px;
@@ -66,6 +78,12 @@ h2 {
     border-radius: 5px;
     font-weight: bold;
     transition: 0.3s;
+}
+
+#ctf .btn {
+    font-size: 1.3rem;
+    padding: 12px 30px;
+    border-radius: 8px;
 }
 
 .btn:hover { background-color: #ff4757; }
@@ -232,9 +250,8 @@ footer a {
 }
 /* --- LOGO TITRE ROOT-ME --- */
 .rootme-logo {
-    height: 120px; 
+    height: 200px; 
     vertical-align: -45%;
-    margin-right: -10px;
 }
 
 /* --- STATS ROOT-ME (Design en Cartes) --- */
