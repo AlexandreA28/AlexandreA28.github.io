@@ -1,3 +1,12 @@
+/* --- COMPORTEMENT GLOBAL DE LA PAGE --- */
+html {
+    /* Active le glissement doux vers les sections */
+    scroll-behavior: smooth; 
+    
+    /* Crée un décalage invisible en haut pour compenser la hauteur de ta navbar fixe */
+    scroll-padding-top: 100px; 
+}
+
 /* --- RESET DE BASE --- */
 * {
     margin: 0;
@@ -203,6 +212,7 @@ footer a {
     color: #ff6b6b;
     text-decoration: none;
     margin: 0 10px;
+    font-size: 1.2rem;
 }
 
 /* --- FORMULAIRE DE CONTACT --- */
@@ -245,15 +255,6 @@ footer a {
     cursor: pointer;
     font-size: 1.2rem;
     margin-top: 10px;
-}
-
-/* Petit ajustement pour le bouton du CV dans le footer */
-.cv-btn {
-    background-color: #2b5876;
-    margin: 20px 0;
-}
-.cv-btn:hover {
-    background-color: #4e4376;
 }
 
 /* --- STATS ROOT-ME --- */
@@ -507,4 +508,97 @@ footer a {
     font-size: 1.1rem;
     font-weight: normal;
     margin-bottom: 15px;
+}
+
+/* --- BARRE DE NAVIGATION --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    /* Blur Effect */
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    border-bottom: 1px solid rgba(0, 191, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0px 60px;
+}
+
+.nav-brand a {
+    color: #00bfff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+.nav-brand a:hover {
+    text-shadow:
+        0 0 10px rgba(0, 191, 255, 0.8),
+        0 0 20px rgba(0, 191, 255, 0.4); /* Effet néon */
+}
+
+/* Le conteneur des liens */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Le style des liens */
+.nav-links a {
+    color: #f0f4f8;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00bfff;
+    text-shadow:
+        0 0 10px rgba(0, 191, 255, 0.8),
+        0 0 20px rgba(0, 191, 255, 0.4); /* Effet néon */
+}
+
+.btn-cv-nav {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #00bfff;
+    text-decoration: none;
+    border: 2px solid #00bfff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-cv-nav:hover {
+    background-color: rgba(0, 191, 255, 0.15); /* Petit fond cyan au survol */
+    box-shadow:
+        0 0 15px rgba(0, 191, 255, 0.8),
+        0 0 30px rgba(0, 191, 255, 0.4);
+}
+
+/* --- COPYRIGHT --- */
+.copyright {
+    margin-top: 30px;
+    color: #a0aec0;
+    font-size: 1rem;
 }

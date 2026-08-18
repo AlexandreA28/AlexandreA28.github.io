@@ -3,18 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexandre | Portfolio & Cybersécurité</title>
+    <title>Alexandre Allaire - Portfolio</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/points_root_me.js" defer></script>
 </head>
 <body>
 
+    <!-- BARRE DE NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#home">Alexandre Allaire</a>
+            </div>
+
+            <div class="nav-links">
+                <a href="#home">Accueil</a>
+                <a href="#about">Parcours</a>
+                <a href="#projects">Projets</a>
+                <a href="#ctf">Root-Me</a>
+                <a href="#skills">Compétences</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="nav-resume">
+                <a href="assets/CV_Alexandre.pdf" target="_blank" class="btn-cv-nav">Mon CV</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- SECTION 1 : HERO HEADER -->
-    <header class="hero">
+    <header id="home" class="hero">
         <div class="hero-content">
             <h1>Alexandre A.</h1>
-            <h2>Étudiant | Passionné de Cybersécurité | Développeur</h2>
-            <p>Ici pour casser des trucs (légalement) et construire l'avenir.</p>
+            <h2>Étudiant</h2>
+            <p>Bla bla bla.</p>
             <a href="#about" class="btn">Découvrir mon profil</a>
         </div>
     </header>
@@ -26,7 +48,7 @@
         <div class="timeline-item-vert">
             <div class="timeline-content">
                 <span class="timeline-date">2022 - En cours</span>
-                <h3>Cycle Ingénieur Cybersécurité</h3>
+                <h3>Cycle Ingénieur</h3>
                 <a href="https://www.esilv.fr/" target="_blank" rel="noopener noreferrer">
                     <h4 class="timeline-company">Ecole Supérieure d'Ingénieurs Léonard de Vinci, Nanterre</h4></a>
                 <p>Cloud & Cybersécurité</p>
@@ -131,7 +153,7 @@
         <a href="/CTF-WU" class="btn btn-primary">Mes Write-Ups</a>
     </section>
 
-<!-- SECTION 5 : BOÎTE À OUTILS -->
+<!-- SECTION 5 : COMPETENCES -->
     <section id="skills" class="section bg-dark">
         <h2>Mes Compétences Techniques</h2>
         
@@ -208,8 +230,7 @@
             <a href="https://github.com/AlexandreA28" target="_blank">Mon GitHub</a>
             <a href="https://www.root-me.org/Celestia" target="_blank">Mon Root-Me</a>
         </div>
-        <p><a href="assets/CV_Alexandre.pdf" class="btn cv-btn" download>Télécharger mon CV</a></p>
-        <p>&copy; 2026 - Alexandre A. - Tous droits réservés.</p>
+        <p class="copyright">&copy; 2026 - Alexandre A. - Tous droits réservés.</p>
     </footer>
 
 </body>
