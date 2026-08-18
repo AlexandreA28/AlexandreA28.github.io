@@ -886,3 +886,60 @@ footer a {
     box-shadow: 0 0 15px rgba(0, 191, 255, 0.8), 0 0 30px rgba(0, 191, 255, 0.4);
     transform: translateY(-4px);
 }
+
+/* --- PAGE DE CHARGEMENT --- */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #020617; /* Même couleur que le fond de ton site */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; /* Au-dessus de tout le reste */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader-content {
+    text-align: center;
+    font-family: monospace; /* Style terminal/hacker */
+}
+
+.loader-text {
+    color: #00ffff; /* Cyan néon */
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    display: block;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.loader-bar {
+    width: 220px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.loader-progress {
+    width: 100%;
+    height: 100%;
+    background-color: #00bfff; /* Cyan néon */
+    box-shadow: 0 0 10px #00bfff;
+    animation: load-anim 1s ease-in-out infinite alternate;
+}
+
+@keyframes load-anim {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Classe ajoutée par le JS pour cacher le loader */
+.loader-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
