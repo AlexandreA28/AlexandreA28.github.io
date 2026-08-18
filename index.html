@@ -6,6 +6,9 @@
     <title>Alexandre Allaire - Portfolio</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/points_root_me.js" defer></script>
+    <script src="assets/js/hero.js" defer></script>
+    <script src="assets/js/navbar-spy.js" defer></script>
+    <script src="assets/js/back-to-top.js" defer></script>
 </head>
 <body>
 
@@ -34,10 +37,16 @@
     <!-- SECTION 1 : HERO HEADER -->
     <header id="home" class="hero">
         <div class="hero-content">
-            <h1>Alexandre A.</h1>
-            <h2>Étudiant</h2>
-            <p>Bla bla bla.</p>
-            <a href="#about" class="btn">Découvrir mon profil</a>
+            <h1 class="hero-name">Alexandre Allaire</h1>
+            <h2 class="hero-title">Futur Ingénieur Cybersécurité</h2>
+            <p class="hero-desc">
+                Passionné par l'investigation et l'analyse numérique, en soif de nouveaux challenges.
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">Voir mes projets</a>
+                <a href="#contact" class="btn-primary">Me contacter</a>
+            </div>
         </div>
     </header>
 
@@ -59,7 +68,8 @@
             <div class="timeline-content">
                 <span class="timeline-date">Septembre - Décembre 2026</span>
                 <h3>Semestre de spécialisation à l'étranger</h3>
-                <h4 class="timeline-company">Université Hanyang, Séoul</h4>
+                <a href="https://www.hanyang.ac.kr/web/eng" target="_blank" rel="noopener noreferrer">
+                    <h4 class="timeline-company">Université Hanyang, Séoul</h4></a>
                 <ul>
                     <li>Programmation C/C++ et programmation orientée objet.</li>
                     <li>Architecture matérielle : Applications microprocesseurs, gestion mémoire, I/O et bases en assembleur.</li>
@@ -71,7 +81,8 @@
             <div class="timeline-content">
                 <span class="timeline-date">Mai - Août 2026</span>
                 <h3>DevOps Cloud</h3>
-                <h4 class="timeline-company">CGI</h4>
+                <a href="https://www.cgi.com/france/fr-fr" target="_blank" rel="noopener noreferrer">
+                    <h4 class="timeline-company">CGI</h4></a>
                 <ul>
                     <li>Scripting et automatisation d'inventaires d'infrastructures cloud AWS en Python.</li>
                     <li>Déploiement de certificats locaux et automatisation de l'installation de l'outil de sécurité Crowdstrike sur VM Azure.</li>
@@ -83,7 +94,8 @@
             <div class="timeline-content">
                 <span class="timeline-date">Septembre 2025 - Mai 2026</span>
                 <h3>Responsable Logiciel (Projet TAALOS)</h3>
-                <h4 class="timeline-company">Association Proteus Group</h4>
+                <a href="https://www.linkedin.com/company/proteusgroup/" target="_blank" rel="noopener noreferrer">
+                    <h4 class="timeline-company">Association Proteus Group</h4></a>
                 <ul>
                     <li><strong>Management :</strong> Pilotage du projet et coordination de 3 sous-équipes (Détection, Système embarqué, Mouvement).</li>
                     <li><strong>Gestion de projet :</strong> Planification de la timeline, distribution et suivi des tâches pour garantir les deadlines.</li>
@@ -96,7 +108,8 @@
             <div class="timeline-content">
                 <span class="timeline-date">Juin - Août 2025</span>
                 <h3>Concepteur-Développeur Python/Java</h3>
-                <h4 class="timeline-company">Open Groupe</h4>
+                <a href="https://www.open.global/" target="_blank" rel="noopener noreferrer">
+                    <h4 class="timeline-company">Open Groupe</h4></a>
                 <ul>
                     <li>Automatisation du transfert quotidien de tickets entre Jira et Mantis via un script Python.</li>
                     <li>Mise à niveau d'un Mock/Bouchon Java simulant un service IAM pour des tests locaux.</li>
@@ -125,8 +138,10 @@
     <section id="ctf" class="section">
         <a href="https://www.root-me.org/Celestia" target="_blank" rel="noopener noreferrer">
                 <img src="assets/img/rootme.png" alt="Logo Root-Me" class="rootme-logo"></a>
-        <h2>
+        <h2 class="glitch-effect" data-text="Root Me">
             Root Me
+            <span class="glitch-layer" data-text="Root Me"></span>
+            <span class="glitch-layer" data-text="Root Me"></span>
         </h2>
 
         <p>Je fais beaucoup de CTF sur Root-Me pour en apprendre plus sur la cybersécurité dans des conditions pratiques pour appliquer la théorie.</p>
@@ -150,7 +165,7 @@
             </div>
         </div>
 
-        <a href="/CTF-WU" class="btn btn-primary">Mes Write-Ups</a>
+        <a href="/CTF-WU" class="btn">Mes Write-Ups</a>
     </section>
 
 <!-- SECTION 5 : COMPETENCES -->
@@ -233,5 +248,11 @@
         <p class="copyright">&copy; 2026 - Alexandre A. - Tous droits réservés.</p>
     </footer>
 
+    <!-- BOUTON RETOUR EN HAUT -->
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Retour en haut">
+       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+           <path d="M18 15l-6-6-6 6"/>
+       </svg>
+    </a>
 </body>
 </html>
