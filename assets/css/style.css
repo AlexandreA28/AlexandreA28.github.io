@@ -925,20 +925,45 @@ footer a {
     margin: 0 auto;
 }
 
-.loader-progress {
-    width: 100%;
+.loader-blocks {
+    display: flex;
+    width: 220px; /* La largeur totale de ta barre */
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fond de la barre vide */
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 0 auto;
+    gap: 0px; /* Ligne de séparation très fine entre chaque segment pour le style rétro */
+}
+
+.loader-blocks .block {
+    flex: 1; /* Chaque bloc prend une part égale de la barre */
     height: 100%;
-    background-color: #00bfff; /* Cyan néon */
-    box-shadow: 0 0 10px #00bfff;
-    animation: load-anim 1s ease-in-out infinite alternate;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: none !important; 
+    
+    /* Animation de remplissage progressif en boucle */
+    animation: fill-bar 1.5s steps(1);
 }
 
-@keyframes load-anim {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+/* Chaque bloc s'allume un par un et reste allumé jusqu'à la fin du cycle */
+.loader-blocks .block:nth-child(1) { animation-delay: 0.2s; }
+.loader-blocks .block:nth-child(2) { animation-delay: 0.3s; }
+.loader-blocks .block:nth-child(3) { animation-delay: 0.5s; }
+.loader-blocks .block:nth-child(4) { animation-delay: 0.8s; }
+.loader-blocks .block:nth-child(5) { animation-delay: 0.9s; }
+
+@keyframes fill-bar {
+    0% {
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: none;
+    }
+    20%, 100% {
+        background-color: #00bfff; /* Cyan néon */
+        box-shadow: 0 0 8px #00bfff;
+    }
 }
 
-/* Classe ajoutée par le JS pour cacher le loader */
 .loader-overlay.hidden {
     opacity: 0;
     visibility: hidden;
