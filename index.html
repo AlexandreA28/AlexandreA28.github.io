@@ -21,30 +21,88 @@
 
     <!-- SECTION 2 : À PROPOS & FRISE -->
     <section id="about" class="section">
-        <h2>À propos de moi</h2>
-        <p class="bio">Passionné par l'informatique depuis des années, je me spécialise aujourd'hui dans la cybersécurité et le développement. Voici mon parcours :</p>
-        
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>2024 - Aujourd'hui</h3>
-                <p>Études en Informatique / Cybersécurité</p>
+        <h2>Expériences & Formations</h2>
+
+        <div class="timeline-item-vert">
+            <div class="timeline-content">
+                <span class="timeline-date">2022 - En cours</span>
+                <h3>Cycle Ingénieur Cybersécurité</h3>
+                <a href="https://www.esilv.fr/" target="_blank" rel="noopener noreferrer">
+                    <h4 class="timeline-company">Ecole Supérieure d'Ingénieurs Léonard de Vinci, Nanterre</h4></a>
+                <p>Cloud & Cybersécurité</p>
             </div>
-            <div class="timeline-item">
-                <h3>2023</h3>
-                <p>Découverte du monde des CTF (Root-Me)</p>
+        </div>
+
+        <div class="timeline-item-vert">
+            <div class="timeline-content">
+                <span class="timeline-date">Septembre - Décembre 2026</span>
+                <h3>Semestre de spécialisation à l'étranger</h3>
+                <h4 class="timeline-company">Université Hanyang, Séoul</h4>
+                <ul>
+                    <li>Programmation C/C++ et programmation orientée objet.</li>
+                    <li>Architecture matérielle : Applications microprocesseurs, gestion mémoire, I/O et bases en assembleur.</li>
+                </ul>
             </div>
-            <div class="timeline-item">
-                <h3>2021</h3>
-                <p>Mes premiers pas en programmation (Python & Web)</p>
+        </div>
+
+        <div class="timeline-item-vert">
+            <div class="timeline-content">
+                <span class="timeline-date">Mai - Août 2026</span>
+                <h3>DevOps Cloud</h3>
+                <h4 class="timeline-company">CGI</h4>
+                <ul>
+                    <li>Scripting et automatisation d'inventaires d'infrastructures cloud AWS en Python.</li>
+                    <li>Déploiement de certificats locaux et automatisation de l'installation de l'outil de sécurité Crowdstrike sur VM Azure.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item-vert">
+            <div class="timeline-content">
+                <span class="timeline-date">Septembre 2025 - Mai 2026</span>
+                <h3>Responsable Logiciel (Projet TAALOS)</h3>
+                <h4 class="timeline-company">Association Proteus Group</h4>
+                <ul>
+                    <li><strong>Management :</strong> Pilotage du projet et coordination de 3 sous-équipes (Détection, Système embarqué, Mouvement).</li>
+                    <li><strong>Gestion de projet :</strong> Planification de la timeline, distribution et suivi des tâches pour garantir les deadlines.</li>
+                    <li><strong>Intégration Matérielle :</strong> Déploiement et optimisation de modèles de détection sur micro-ordinateur (Jetson Nano Orin).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item-vert">
+            <div class="timeline-content">
+                <span class="timeline-date">Juin - Août 2025</span>
+                <h3>Concepteur-Développeur Python/Java</h3>
+                <h4 class="timeline-company">Open Groupe</h4>
+                <ul>
+                    <li>Automatisation du transfert quotidien de tickets entre Jira et Mantis via un script Python.</li>
+                    <li>Mise à niveau d'un Mock/Bouchon Java simulant un service IAM pour des tests locaux.</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3 : ROOT ME -->
-    <section id="ctf" class="section bg-dark">
+    <!-- SECTION 3 : PROJETS -->
+    <section id="projects" class="section bg-dark">
+        <h2>Mes Projets</h2>
+        <div class="grid-projects">
+            <a href="/projets/Ransomeware/" class="card">
+                <h3>Simulation d'attaque BadUSB & DFIR</h3>
+                <p>Création et déploiement d'un ransomware Python (AES/RSA) par clé physique, suivi de l'analyse forensique post-incident pour reconstituer la chronologie de l'attaque.</p>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Raspberry Pi Pico</span>
+                <span class="tech-tag">Volatility</span>
+                <span class="tech-tag">FTK Imager</span>
+                <span class="tech-tag">KAPE</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- SECTION 4 : ROOT ME -->
+    <section id="ctf" class="section">
         <a href="https://www.root-me.org/Celestia" target="_blank" rel="noopener noreferrer">
                 <img src="assets/img/rootme.png" alt="Logo Root-Me" class="rootme-logo"></a>
-        <h2></h2>
         <h2>
             Root Me
         </h2>
@@ -70,27 +128,11 @@
             </div>
         </div>
 
-        <a href="/CTF-WU" class="btn btn-primary">Mes Write-Ups ICI</a>
-    </section>
-
-    <!-- SECTION 4 : PROJETS -->
-    <section id="projects" class="section">
-        <h2>Mes Projets</h2>
-        <div class="grid-projects">
-            <a href="/projets/Ransomeware/" class="card">
-                <h3>Simulation d'attaque BadUSB & DFIR</h3>
-                <p>Création et déploiement d'un ransomware Python (AES/RSA) par clé physique, suivi de l'analyse forensique post-incident pour reconstituer la chronologie de l'attaque.</p>
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Raspberry Pi Pico</span>
-                <span class="tech-tag">Volatility</span>
-                <span class="tech-tag">FTK Imager</span>
-                <span class="tech-tag">KAPE</span>
-            </a>
-        </div>
+        <a href="/CTF-WU" class="btn btn-primary">Mes Write-Ups</a>
     </section>
 
 <!-- SECTION 5 : BOÎTE À OUTILS -->
-    <section id="skills" class="section">
+    <section id="skills" class="section bg-dark">
         <h2>Mes Compétences Techniques</h2>
         
         <div class="skills-categories-container">
@@ -139,7 +181,7 @@
     </section>
 
     <!-- SECTION 6 : CONTACT -->
-    <section id="contact" class="section bg-dark">
+    <section id="contact" class="section">
         <h2>Me Contacter</h2>
         <p>N'hésitez pas à me contacter pour toute question ou opportunité !</p>
         
