@@ -106,18 +106,18 @@ a {
     top: 0;
     left: -50%;
     background-image: 
-        linear-gradient(rgba(0, 191, 255, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 191, 255, 0.15) 1px, transparent 1px);
-    background-size: 40px 40px; 
-    transform: perspective(600px) rotateX(75deg);
+        linear-gradient(#00bfff3b 1px, transparent 1px),
+        linear-gradient(90deg, #00bfff44 1px, transparent 1px);
+    background-size: 50px 50px; 
+    transform: perspective(1000px) rotateX(72deg);
     animation: cyberGridMove 4s linear infinite;
     z-index: 0;
     pointer-events: none;
 }
 
 @keyframes cyberGridMove {
-    0% { transform: perspective(600px) rotateX(75deg) translateY(0); }
-    100% { transform: perspective(600px) rotateX(75deg) translateY(40px); }
+    0% { transform: perspective(1000px) rotateX(72deg) translateY(0); }
+    100% { transform: perspective(1000px) rotateX(72deg) translateY(50px); }
 }
 
 /* --- LE TEXTE --- */
@@ -702,7 +702,7 @@ footer a {
     pointer-events: none;
 }
 
-/* --- TOUS LES CALQUES (6) --- */
+/* --- TOUS LES CALQUES (10) --- */
 .glitch-effect::before,
 .glitch-effect::after,
 .glitch-layer:nth-of-type(1)::before,
