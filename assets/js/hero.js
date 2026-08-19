@@ -7,7 +7,7 @@ if (hero) {
     let cursorY = -1000;
     let lastParticleX = 0;
     let lastParticleY = 0;
-    const minDistance = 40;
+    const minDistance = 50;
 
     const createParticle = () => {
 
@@ -35,14 +35,15 @@ if (hero) {
         const particle = document.createElement('div');
         particle.classList.add('glitch-particle');
 
-        let size = Math.random() * 30 + 5; 
+        let size = Math.random() * 30 + 10; 
         if (Math.random() > 0.9) { size = Math.random() * 60 + 10; }
         
         let width, height;
         const shapeType = Math.random();
         
         if (shapeType < 0.33) {
-            width = size; height = size;
+            width = Math.min(size, 35); 
+            height = Math.min(size, 35);
         } else if (shapeType < 0.66) {
             width = size * 2.5; height = size * 0.2;
         } else {
@@ -53,7 +54,7 @@ if (hero) {
         particle.style.height = `${height}px`;
 
         particle.style.backgroundColor = 'rgba(0, 191, 255, 0.05)';
-        const offset = Math.max(2, size * 0.15); 
+        const offset = Math.max(2, size * 0.05); 
         particle.style.setProperty('--offset', `${offset}px`);
 
         const offsetX = (Math.random() - 0.5) * spawnBoxSize;
