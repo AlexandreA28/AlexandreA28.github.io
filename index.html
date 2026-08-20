@@ -150,15 +150,16 @@
 
     <!-- SECTION 4 : ROOT ME -->
     <section id="ctf" class="section">
-        <a href="https://www.root-me.org/Celestia" target="_blank" rel="noopener noreferrer">
-                <img src="assets/img/rootme.png" alt="Logo Root-Me" class="rootme-logo"></a>
-        <h2 class="glitch-effect" data-text="Root Me">
-            Root Me
-            <span class="glitch-layer" data-text="Root Me"></span>
-            <span class="glitch-layer" data-text="Root Me"></span>
-            <span class="glitch-layer" data-text="Root Me"></span>
-            <span class="glitch-layer" data-text="Root Me"></span>
-        </h2>
+        <a href="https://www.root-me.org/Celestia" target="_blank" rel="noopener noreferrer" class="no-underline">
+            <img src="assets/img/rootme.png" alt="Logo Root-Me" class="rootme-logo">
+            <h2 class="glitch-effect" data-text="Root Me">
+                Root Me
+                <span class="glitch-layer" data-text="Root Me"></span>
+                <span class="glitch-layer" data-text="Root Me"></span>
+                <span class="glitch-layer" data-text="Root Me"></span>
+                <span class="glitch-layer" data-text="Root Me"></span>
+            </h2>
+        </a>
 
         <p>Je fais beaucoup de CTF sur Root-Me pour en apprendre plus sur la cybersécurité dans des conditions pratiques pour appliquer la théorie.</p>
         <p>Tous mes Write-Ups sont faits à la main pour bien comprendre les étapes faites et avoir une notice prête à l'emploi pour les cas similaires.</p>
@@ -235,24 +236,51 @@
 
     <!-- SECTION 6 : CONTACT -->
     <section id="contact" class="section">
-        <h2>Me Contacter</h2>
-        <p>N'hésitez pas à me contacter pour toute question ou opportunité !</p>
+        <div class="contact-header">
+            <h2>Me Contacter</h2>
+            <p>N'hésitez pas à me contacter pour toute question ou opportunité !</p>
+        </div>
         
-        <form action="https://formspree.io/f/mojgrnrv" method="POST" class="contact-form">
-            <div class="form-group">
-                <label for="name">Nom et Prénom</label>
-                <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
+        <div class="contact-container">
+            
+            <!-- Coordonnées -->
+            <div class="contact-info">
+                <h3>Mes coordonnées</h3>
+                <p>Retrouvez-moi directement sur mes réseaux ou par mail :</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:alexandre.allairea@gmail.com" class="contact-item">
+                        <span class="contact-text">Alexandre.allairea@gmail.com</span>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/alexandre-allaire/" target="_blank" rel="noopener noreferrer" class="contact-item">
+                        <span class="contact-text">Mon LinkedIn</span>
+                    </a>
+
+                    <a href="https://github.com/AlexandreA28" target="_blank" rel="noopener noreferrer" class="contact-item">
+                        <span class="contact-text">Mon GitHub</span>
+                    </a>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Votre email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
-            </div>
-            <button type="submit" class="btn">Envoyer le message</button>
-        </form>
+
+            <!-- Formulaire -->
+            <form action="https://formspree.io/f/mojgrnrv" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom et Prénom</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Votre email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+                </div>
+                <button type="submit" class="btn">Envoyer le message</button>
+            </form>
+
+        </div>
     </section>
 
     <!-- FOOTER -->
@@ -261,7 +289,7 @@
             <a href="https://github.com/AlexandreA28" target="_blank">Mon GitHub</a>
             <a href="https://www.root-me.org/Celestia" target="_blank">Mon Root-Me</a>
         </div>
-        <p class="copyright">&copy; 2026 - Alexandre A. - Tous droits réservés.</p>
+        <p class="copyright">&copy; 2026 - Alexandre Allaire - Tous droits réservés.</p>
     </footer>
 
     <!-- BOUTON RETOUR EN HAUT -->
