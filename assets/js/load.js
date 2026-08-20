@@ -4,6 +4,6 @@ window.addEventListener('load', () => {
     if (loader) {
         setTimeout(() => {
             loader.classList.add('hidden');
-        }, 1300);
+        }, 1100);
     }
 });

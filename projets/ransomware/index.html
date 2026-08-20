@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Ransomware & DFIR - Alexandre Allaire</title>
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script src="../../assets/js/hero.js" defer></script>
+    <script src="../../assets/js/navbar-spy.js" defer></script>
+    <script src="../../assets/js/back-to-top.js" defer></script>
+    <script src="../../assets/js/load.js" defer></script>
+</head>
+<body>
+
+    <!-- LOADER -->
+    <div id="loader" class="loader-overlay">
+        <div class="loader-content">
+            <span class="loader-text">INITIALIZING PROJECT...</span>
+            <div class="loader-blocks">
+                <span class="block"></span>
+                <span class="block"></span>
+                <span class="block"></span>
+                <span class="block"></span>
+                <span class="block"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- BARRE DE NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="../../index.html#home">Alexandre Allaire</a>
+            </div>
+
+            <div class="nav-links">
+                <a href="../../index.html#projects">Retour</a>
+                <a href="#overview">Contexte</a>
+                <a href="#attack">Attaque</a>
+                <a href="#analyse">Analyse</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1 : HERO -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-name">BadUSB & DFIR</h1>
+            <h2 class="hero-title">Simulation d'attaque et Analyse Forensique</h2>
+            <p class="hero-desc">
+                Développement d'un ransomware Python (AES/RSA) déployé par clé physique Raspberry Pi Pico RP2040, suivi du rapport de l'investigation numérique post-infection.
+            </p>
+        </div>
+    </header>
+
+    <!-- SECTION 2 : CONTEXTE -->
+    <section id="overview" class="section">
+        <h2>Contexte & Objectifs</h2>
+        
+        <div class="timeline-content" style="max-width: 800px; margin: 0 auto; text-align: left;">
+            <h3>Le but du projet</h3>
+            <p>Développer mes connaissances en cryptographie appliquées au développement de malware dans un scénario réaliste pour m'entraîner à la réponse à incident et à la rédaction de rapport professionnel.</p>
+            <br>
+            <h3>Technologies utilisées :</h3>
+            <ul>
+                <li><strong>Langages :</strong> Python, Powershell, Bash</li>
+                <li><strong>Outils Offensifs :</strong> Raspberry Pi Pico (BadUSB)</li>
+                <li><strong>Outils Défensifs :</strong> Volatility 3, FTK Imager, KAPE</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION 3 : L'ATTAQUE (Fond sombre pour alterner) -->
+    <section id="attack" class="section bg-dark">
+        <h2>Infection</h2>
+        
+        <div class="timeline-content" style="max-width: 800px; margin: 0 auto; text-align: left;">
+            <h3>Vecteur initial : Le BadUSB</h3>
+            <p>Explication de comment la clé se fait passer pour un clavier et injecte le script de téléchargement du payload...</p>
+            
+            <br>
+            <h3>Le Ransomware Python</h3>
+            <p>Explication de ton système de chiffrement hybride AES/RSA pour empêcher la récupération des clés en mémoire...</p>
+        </div>
+    </section>
+
+    <!-- SECTION 4 : L'ANALYSE-->
+    <section id="analyse" class="section">
+        <h2>Analyse</h2>
+        
+        <div class="timeline-content" style="max-width: 800px; margin: 0 auto; text-align: left;">
+            <h3>Acquisition des preuves</h3>
+            <p>Comment tu as dumpé la RAM avec FTK Imager et extrait les artefacts avec KAPE...</p>
+            
+            <br>
+            <h3>Analyse Mémoire (Volatility)</h3>
+            <p>Les plugins utilisés (windows.pslist, windows.cmdline...) pour retrouver la trace d'exécution du malware et potentiellement la clé AES si elle n'a pas été effacée assez vite.</p>
+        </div>
+        <a href="index.html#analyse" class="btn">Rapport d'analyse ( En cours )</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="copyright">&copy; 2026 - Alexandre Allaire - Tous droits réservés.</p>
+    </footer>
+
+    <!-- BOUTON RETOUR EN HAUT -->
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Retour en haut">
+       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+           <path d="M18 15l-6-6-6 6"/>
+       </svg>
+    </a>
+</body>
+</html>

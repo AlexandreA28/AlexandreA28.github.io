@@ -13,6 +13,7 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             const id = entry.target.getAttribute('id');
 
+            history.replaceState(null, null, `#${id}`);
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${id}`) {
