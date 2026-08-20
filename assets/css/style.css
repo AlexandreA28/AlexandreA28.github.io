@@ -79,6 +79,36 @@ a {
     margin-top: 10px;
 }
 
+.rootme-logo {
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.rootme-logo:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px #ff0000);
+}
+
+/* La boîte d'emballage */
+.rootme-text-wrapper {
+    display: inline-block; 
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.rootme-text-wrapper .glitch-effect {
+    transition: text-shadow 0.2s ease;
+}
+
+.rootme-text-wrapper:hover {
+    transform: scale(1.1);
+}
+
+.rootme-text-wrapper:hover .glitch-effect {
+    text-shadow: 0 0 15px #ff0000;
+}
+
 #projects h3 {
     color: #00bfff;
 }
@@ -192,7 +222,7 @@ a {
     display: inline-block;
     padding: 10px 20px;
     margin-top: 20px;
-    background-color: #ff4242;
+    background-color: #ff4a4a;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -207,8 +237,9 @@ a {
 }
 
 .btn:hover {
-    background-color: #ff1125;
-    box-shadow: 0 0 25px #ff4242;
+    background-color: #ff2336;
+    box-shadow: 0 0 15px rgba(255, 66, 66, 0.8),
+                0 0 30px rgba(255, 66, 66, 0.4);
 }
 
 /* --- FRISE (TIMELINE BASIQUE) --- */
@@ -272,6 +303,7 @@ a {
     justify-content: center;
     flex-wrap: wrap;
 }
+
 .skills-list span {
     background: #2c3e50;
     color: white;
@@ -284,14 +316,7 @@ footer {
     background: #111;
     color: white;
     text-align: center;
-    padding: 40px 20px;
-}
-
-footer a {
-    color: #ff6b6b;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 1.2rem;
+    padding: 40px;
 }
 
 /* --- CONTACT --- */
@@ -543,6 +568,11 @@ footer a {
     flex: 1;
     min-width: 450px;
     max-width: 450px;
+    transition: all 0.3s ease;
+}
+
+.skill-group:hover {
+    transform: translateY(-5px);
 }
 
 .skill-group h3 {
@@ -783,7 +813,7 @@ footer a {
 
 /* --- COPYRIGHT --- */
 .copyright {
-    margin-top: 30px;
+    margin-top: 10px;
     color: #a0aec0;
     font-size: 1rem;
 }
