@@ -16,6 +16,16 @@
 </head>
 <body>
 
+    <!-- LOADER -->
+    <div id="loader" class="loader-overlay">
+        <div class="loader-content">
+            <span class="loader-text">INITIALIZING FORENSIC...</span>
+            <div class="loader-blocks">
+                <span class="block"></span><span class="block"></span><span class="block"></span><span class="block"></span><span class="block"></span>
+            </div>
+        </div>
+    </div>
+
     <!-- BARRE DE NAVIGATION -->
     <nav class="navbar">
         <div class="nav-container">
@@ -42,64 +52,27 @@
     <section class="section">
         <div class="grid-projects" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
 
-            <!-- ========================================== -->
-            <!-- CHALLENGE 1 : Exemple avec tags et déchiffrement -->
-            <!-- ========================================== -->
-            <div class="card" style="text-align: left; cursor: default;">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                    <div>
-                        <h3 style="margin-top: 0;">Command & Control - Niveau 2</h3>
-                        <p style="color: #a0aec0; font-size: 0.9rem; margin-top: 5px;">Analyse d'une capture réseau (PCAP) pour identifier l'exfiltration de données via requêtes DNS.</p>
-                    </div>
-                    <span style="background: rgba(255, 189, 46, 0.2); color: #ffbd2e; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; white-space: nowrap;">🟠 Moyen (35 pts)</span>
+            <div class="card-wu">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Capture moi ça</h3>
                 </div>
                 
-                <div style="margin-bottom: 20px;">
-                    <span class="tech-tag">Wireshark</span>
-                    <span class="tech-tag">Tshark</span>
-                    <span class="tech-tag">Réseau</span>
-                </div>
+                <p>Un employé a perdu son mot de passe KeePass.
+                   Il ne s’en souvient plus et il ne trouve plus son fichier de mot de passe.
+                   Après des heures de recherche, il se trouve qu’il a envoyé à un de ses collègues un screen de ses mots de passe, cependant il reste introuvable.</p>
 
-                <!-- ZONE DE DÉCHIFFREMENT -->
-                <div class="decrypt-zone" id="zone-chal-1" style="background: #0d1117; padding: 15px; border-radius: 6px; border: 1px solid #2c3e50;">
-                    <p style="margin-top: 0; font-size: 0.9rem;">🔒 <strong>Write-Up verrouillé.</strong> Entrez le flag pour le déchiffrer :</p>
+                <div class="decrypt-zone" id="zone-chal-1" style="text-align: left; background: #0d1117; padding: 15px; border-radius: 6px; border: 1px solid #2c3e50; margin-bottom: 20px;">
+                    
+                    <p style="margin-top: 0; font-size: 0.9rem;"><strong>Write-Up verrouillé.</strong> Entrez le flag pour le déchiffrer :</p>
+                    
                     <div style="display: flex; gap: 10px; margin-top: 10px;">
                         <input type="text" id="flag-input-1" placeholder="RM{...}" style="flex: 1; padding: 8px 12px; border-radius: 4px; border: 1px solid #4a5568; background: #1e1e2f; color: white;">
                         
-                        <!-- 👇 Remplace 'TON_BASE_64_ICI' par le résultat de ton script Python 👇 -->
-                        <button onclick="decryptWU('zone-chal-1', 'flag-input-1', 'TON_BASE_64_ICI')" class="btn" style="padding: 8px 20px;">Déchiffrer</button>
+                        <!-- 👇 On passe juste le nom du fichier ici 👇 -->
+                        <button onclick="decryptWU('zone-chal-1', 'flag-input-1', 'Capture moi ça.txt.enc')" class="btn" style="padding: 8px 20px;">Déchiffrer</button>
                     </div>
+                    
                     <p id="error-chal-1" style="color: #ff6b6b; font-size: 0.85rem; margin-top: 10px; display: none;">❌ Flag incorrect ou données corrompues.</p>
-                </div>
-            </div>
-
-            <!-- ========================================== -->
-            <!-- CHALLENGE 2 : Autre exemple (Dump Mémoire) -->
-            <!-- ========================================== -->
-            <div class="card" style="text-align: left; cursor: default;">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                    <div>
-                        <h3 style="margin-top: 0;">Dump Mémoire - L'Infiltré</h3>
-                        <p style="color: #a0aec0; font-size: 0.9rem; margin-top: 5px;">Recherche de malwares injectés dans un dump RAM Windows avec Volatility 3.</p>
-                    </div>
-                    <span style="background: rgba(255, 95, 86, 0.2); color: #ff5f56; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; white-space: nowrap;">🔴 Difficile (50 pts)</span>
-                </div>
-                
-                <div style="margin-bottom: 20px;">
-                    <span class="tech-tag">Volatility 3</span>
-                    <span class="tech-tag">Windows</span>
-                </div>
-
-                <!-- ZONE DE DÉCHIFFREMENT -->
-                <div class="decrypt-zone" id="zone-chal-2" style="background: #0d1117; padding: 15px; border-radius: 6px; border: 1px solid #2c3e50;">
-                    <p style="margin-top: 0; font-size: 0.9rem;">🔒 <strong>Write-Up verrouillé.</strong> Entrez le flag pour le déchiffrer :</p>
-                    <div style="display: flex; gap: 10px; margin-top: 10px;">
-                        <!-- Attention : On incrémente les IDs (flag-input-2, zone-chal-2) -->
-                        <input type="text" id="flag-input-2" placeholder="RM{...}" style="flex: 1; padding: 8px 12px; border-radius: 4px; border: 1px solid #4a5568; background: #1e1e2f; color: white;">
-                        
-                        <button onclick="decryptWU('zone-chal-2', 'flag-input-2', 'UN_AUTRE_BASE_64_ICI')" class="btn" style="padding: 8px 20px;">Déchiffrer</button>
-                    </div>
-                    <p id="error-chal-2" style="color: #ff6b6b; font-size: 0.85rem; margin-top: 10px; display: none;">❌ Flag incorrect ou données corrompues.</p>
                 </div>
             </div>
 
