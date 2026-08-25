@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forensic - Root-Me | Alexandre Allaire</title>
     
-    <!-- Chemins adaptés (../../../) pour remonter à la racine -->
     <link rel="stylesheet" href="../../../assets/css/style.css">
     <script src="../../../assets/js/navbar-spy.js" defer></script>
+    <script src="../../../assets/js/hero.js" defer></script>
     <script src="../../../assets/js/back-to-top.js" defer></script>
     <script src="../../../assets/js/load.js" defer></script>
-    
-    <!-- Ton fameux script de déchiffrement natif -->
     <script src="../../../assets/js/decrypt-wu.js" defer></script>
 </head>
 <body>
@@ -33,47 +31,94 @@
                 <a href="../../../index.html#home">Alexandre Allaire</a>
             </div>
             <div class="nav-links">
-                <!-- Retourne au Hub de sélection des plateformes/catégories -->
                 <a href="../../index.html#rootme">Retour aux catégories</a>
             </div>
         </div>
     </nav>
 
     <!-- HEADER DE LA CATÉGORIE -->
-    <header class="hero" style="min-height: 40vh; padding-top: 100px;">
+    <header id="home" class="hero">
         <div class="hero-content">
             <h1 class="hero-name">Forensic</h1>
             <h2 class="hero-title">Investigation Numérique</h2>
-            <p class="hero-desc">Analyse de traces, captures réseau, dumps mémoire et stéganographie.</p>
+            <p class="hero-desc-wu">Ces challenges mettent à l’épreuve vos techniques d’investigations numériques en analysant des traces mémoire, des fichiers de journalisation, des captures réseaux...</p>
         </div>
     </header>
 
     <!-- LISTE DES CHALLENGES -->
     <section class="section">
-        <div class="grid-projects" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+        <h2>Writes-Ups</h2>
 
-            <div class="card-wu">
+        <div class="grid-wu">
+
+            <div class="card-wu-list" onclick="openModal('Capture moi ça', 'capture-moi-ca.txt.enc')" style="cursor: pointer;">
                 <div class="card-header-inline" style="justify-content: center;">
                     <h3>Capture moi ça</h3>
                 </div>
                 
-                <p>Un employé a perdu son mot de passe KeePass.
-                   Il ne s’en souvient plus et il ne trouve plus son fichier de mot de passe.
+                <p>Un employé a perdu son mot de passe KeePass.<br>
+                   Il ne s’en souvient plus et il ne trouve plus son fichier de mot de passe.<br>
                    Après des heures de recherche, il se trouve qu’il a envoyé à un de ses collègues un screen de ses mots de passe, cependant il reste introuvable.</p>
+            </div>
 
-                <div class="decrypt-zone" id="zone-chal-1" style="text-align: left; background: #0d1117; padding: 15px; border-radius: 6px; border: 1px solid #2c3e50; margin-bottom: 20px;">
-                    
-                    <p style="margin-top: 0; font-size: 0.9rem;"><strong>Write-Up verrouillé.</strong> Entrez le flag pour le déchiffrer :</p>
-                    
-                    <div style="display: flex; gap: 10px; margin-top: 10px;">
-                        <input type="text" id="flag-input-1" placeholder="RM{...}" style="flex: 1; padding: 8px 12px; border-radius: 4px; border: 1px solid #4a5568; background: #1e1e2f; color: white;">
-                        
-                        <!-- 👇 On passe juste le nom du fichier ici 👇 -->
-                        <button onclick="decryptWU('zone-chal-1', 'flag-input-1', 'Capture moi ça.txt.enc')" class="btn" style="padding: 8px 20px;">Déchiffrer</button>
-                    </div>
-                    
-                    <p id="error-chal-1" style="color: #ff6b6b; font-size: 0.85rem; margin-top: 10px; display: none;">❌ Flag incorrect ou données corrompues.</p>
+            <div class="card-wu-list" onclick="openModal('Command & Control - niveau 2', 'Command & Control - niveau 2.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Command & Control - niveau 2</h3>
                 </div>
+                
+                <p>
+                Berthier, grâce à vous la machine a été identifiée, vous avez demandé un dump de la mémoire vive de la machine et vous aimeriez bien jeter un coup d’œil aux logs de l’antivirus.<br>
+                Malheureusement, vous n’avez pas pensé à noter le nom de cette machine.<br>
+                Heureusement ce n’est pas un problème, vous disposez du dump de memoire.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Command & Control - niveau 3', 'Command & Control - niveau 3.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Command & Control - niveau 3</h3>
+                </div>
+                
+                <p>
+                Berthier, l’antivirus n’a rien trouvé.<br>
+                A vous d’essayer de trouver le programme malveillant dans le dump de la mémoire vive.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Command & Control - niveau 4', 'Command & Control - niveau 4.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Command & Control - niveau 4</h3>
+                </div>
+                
+                <p>
+                Berthier, avec ce que vous avez vu dans les processus, il est manifeste que ce programme malveillant est un point d’exfiltration, mais quelle est l’adresse IP du serveur interne que ces cybercriminels visent.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Command & Control - niveau 5', 'Command & Control - niveau 5.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Command & Control - niveau 5</h3>
+                </div>
+                
+                <p>
+                Berthier, manifestement l’attaquant dispose des mots de passe des systèmes.<br>
+                Le programme malveillant semble être maintenu manuellement sur les machines.<br>
+                Le parc de la société ACME semblant à jour, c’est peut être les mots de passe qui sont faibles.<br>
+                <br>
+                John, l’administrateur des systèmes ne vous croit pas.<br>
+                Prouvez-lui.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Command & Control - niveau 6', 'Command & Control - niveau 6.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Command & Control - niveau 6</h3>
+                </div>
+                
+                <p>
+                Berthier, avant de procéder au moindre blocage des point d’exfiltration du programme malveillant sur les pare-feux.<br>
+                On voudrait s’assurer de connaitre tous les hostnames des C&C pour être certain de bloquer intégralement le flux et éventuellement retrouver d’autres postes infectés.<br>
+                Ca y est, on y est, désossez moi ce malware !
+                </p>
             </div>
 
         </div>
@@ -101,5 +146,36 @@
         <p class="copyright">&copy; 2026 - Alexandre Allaire - Tous droits réservés.</p>
     </footer>
 
+    <!-- L'arrière-plan flouté -->
+    <div id="wu-modal-overlay" class="modal-overlay" onclick="closeModal()">
+        
+        <div id="wu-modal-box" class="modal-box" onclick="event.stopPropagation()">
+            
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title" style="margin-top: 0; margin-bottom: 20px; color: #00bfff; text-align: center;">Titre du Challenge</h2>
+            
+            <!-- Formulaire de déchiffrement -->
+            <div id="modal-decrypt-form">
+                <p style="color: #cbd5e0; margin-bottom: 30px; margin-left: 5px;">Veuillez entrer le flag du challenge pour déverrouiller le Write-Up :</p>
+                
+                <div style="display: flex; gap: 10px; align-items: stretch;">
+                    <input type="text" id="modal-flag-input" placeholder="Flag..." style="margin-right: 5px; flex: 1; padding: 15px 15px; border-radius: 4px; border: none; outline: none; background: #1e1e2f; color: white;">
+                    
+                    <button onclick="attemptDecrypt()" class="btn-wu">Déchiffrer</button>
+                </div>
+            </div>
+
+            <div id="modal-decrypted-content" style="display: none; text-align: left; margin-top: 20px;">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- BOUTON RETOUR EN HAUT -->
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Retour en haut">
+       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+           <path d="M18 15l-6-6-6 6"/>
+       </svg>
+    </a>
 </body>
 </html>
