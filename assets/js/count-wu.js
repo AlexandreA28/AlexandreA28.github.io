@@ -8,8 +8,7 @@ async function updateWUCount(pageUrl, targetId) {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
 
-        // 👇 LA MODIFICATION EST ICI : on compte les '.card-wu' au lieu des '.decrypt-zone'
-        const count = doc.querySelectorAll('.card-wu').length;
+        const count = doc.querySelectorAll('.card-wu-list').length;
 
         const badge = document.getElementById(targetId);
         if (badge) {

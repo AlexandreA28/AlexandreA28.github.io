@@ -5,15 +5,12 @@ function openModal(title, filename) {
     document.getElementById('modal-title').innerText = title;
     currentFilename = filename;
     
-    // On réinitialise l'affichage (montre le formulaire, cache le texte)
     document.getElementById('modal-decrypt-form').style.display = 'block';
     document.getElementById('modal-decrypted-content').style.display = 'none';
     document.getElementById('modal-flag-input').value = '';
     
-    // On affiche la modale (Flexbox pour centrer)
     document.getElementById('wu-modal-overlay').style.display = 'flex';
     
-    // On focus automatiquement l'input pour que l'utilisateur puisse taper direct
     setTimeout(() => document.getElementById('modal-flag-input').focus(), 100);
 }
 
@@ -22,13 +19,13 @@ function closeModal() {
     document.getElementById('wu-modal-overlay').style.display = 'none';
 }
 
-// 3. Fonction de déchiffrement (avec WebCrypto)
+// 3. Fonction de déchiffrement
 async function attemptDecrypt() {
     const modalBox = document.getElementById('wu-modal-box');
     const password = document.getElementById('modal-flag-input').value;
 
     try {
-        // --- LOGIQUE WEB CRYPTO EXACTEMENT COMME AVANT ---
+        // --- LOGIQUE WEB CRYPTO ---
         const response = await fetch(currentFilename);
         if (!response.ok) throw new Error("Fichier introuvable.");
         const base64Data = await response.text();
@@ -53,18 +50,14 @@ async function attemptDecrypt() {
         const dec = new TextDecoder();
         const decryptedHtml = dec.decode(decryptedBuffer);
         
-        // --- SUCCÈS : On remplace et on affiche le WU ---
-        document.getElementById('modal-decrypted-content').innerHTML = decryptedHtml;
+        document.getElementById('modal-decrypted-content').innerHTML = decryptedHtml.replace(/\n/g, '<br>');
         document.getElementById('modal-decrypt-form').style.display = 'none';
         document.getElementById('modal-decrypted-content').style.display = 'block';
 
     } catch (e) {
-        // --- ÉCHEC : On déclenche l'animation d'erreur ---
         console.error("Échec du déchiffrement");
-        
-        // On retire la classe puis on la remet pour pouvoir rejouer l'animation si le user se trompe plusieurs fois
         modalBox.classList.remove('error-trigger');
-        void modalBox.offsetWidth; // Astuce JS pour forcer le navigateur à "recharger" l'élément
+        void modalBox.offsetWidth;
         modalBox.classList.add('error-trigger');
     }
 }
