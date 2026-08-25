@@ -188,6 +188,12 @@ a {
     margin-bottom: 40px;
 }
 
+@media (min-width: 768px) {
+    .hero-desc {
+        white-space: nowrap;
+    }
+}
+
 /* --- LES BOUTONS --- */
 .hero-buttons {
     display: flex;
@@ -267,29 +273,66 @@ a {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 30px;
+    align-items: stretch;
 }
 
 .card {
     background: #2c3e50;
     padding: 20px 25px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     width: 40%;
     min-width: 250px;
     max-width: 550px;
     text-decoration: none;
     color: white;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    transition: box-shadow 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgba(0, 191, 255, 1),
+                0 0 40px rgba(0, 191, 255, 0.6);
 }
 
 .tech-tag {
     display: inline-block;
     margin-top: 10px;
+    padding: 5px 10px;
+    background: rgb(1, 1, 44);
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.card-wu {
+    background: #2c3e50;
+    padding: 20px 25px;
+    border-radius: 8px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    max-width: 550px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s;
+    text-align: center;
+}
+
+.card-wu:hover {
+    box-shadow: 0 0 10px rgba(0, 191, 255, 1),
+                0 0 40px rgba(0, 191, 255, 0.6);
+}
+
+.card-wu p {
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.tech-tag-wu {
+    display: inline-block;
+    margin-top: auto;
+    align-self: center;
     padding: 5px 10px;
     background: rgb(1, 1, 44);
     border-radius: 15px;
@@ -445,7 +488,8 @@ footer {
 }
 
 .contact-item:hover::before {
-    box-shadow: 0 0 20px rgba(0, 191, 255, 1);
+    box-shadow: 0 0 10px rgba(0, 191, 255, 1),
+                0 0 25px rgba(0, 191, 255, 0.6);
 }
 
 /* --- COLONNE DROITE (Ton formulaire corrigé) --- */
@@ -1316,4 +1360,23 @@ footer {
 
 .warning-banner strong {
     color: #ff6b6b;
+}
+
+/* --- EN-TÊTE DE CARTE AVEC ICÔNE --- */
+.card-header-inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;           
+    margin-bottom: 15px;
+}
+
+.card-header-inline h3 {
+    margin: 0;
+}
+
+.icone-rootme {
+    height: 40px;
+    width: auto;
+    margin-bottom: 0;
 }

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forensic - Root-Me | Alexandre Allaire</title>
+    
+    <!-- Chemins adaptés (../../../) pour remonter à la racine -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <script src="../../../assets/js/navbar-spy.js" defer></script>
+    <script src="../../../assets/js/back-to-top.js" defer></script>
+    <script src="../../../assets/js/load.js" defer></script>
+    
+    <!-- Ton fameux script de déchiffrement natif -->
+    <script src="../../../assets/js/decrypt-wu.js" defer></script>
+</head>
+<body>
+
+    <!-- BARRE DE NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="../../../index.html#home">Alexandre Allaire</a>
+            </div>
+            <div class="nav-links">
+                <!-- Retourne au Hub de sélection des plateformes/catégories -->
+                <a href="../../index.html#rootme">Retour aux catégories</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER DE LA CATÉGORIE -->
+    <header class="hero" style="min-height: 40vh; padding-top: 100px;">
+        <div class="hero-content">
+            <h1 class="hero-name">Forensic</h1>
+            <h2 class="hero-title">Investigation Numérique</h2>
+            <p class="hero-desc">Analyse de traces, captures réseau, dumps mémoire et stéganographie.</p>
+        </div>
+    </header>
+
+    <!-- LISTE DES CHALLENGES -->
+    <section class="section">
+        <div class="grid-projects" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+
+            <!-- ========================================== -->
+            <!-- CHALLENGE 1 : Exemple avec tags et déchiffrement -->
+            <!-- ========================================== -->
+            <div class="card" style="text-align: left; cursor: default;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                    <div>
+                        <h3 style="margin-top: 0;">Command & Control - Niveau 2</h3>
+                        <p style="color: #a0aec0; font-size: 0.9rem; margin-top: 5px;">Analyse d'une capture réseau (PCAP) pour identifier l'exfiltration de données via requêtes DNS.</p>
+                    </div>
+                    <span style="background: rgba(255, 189, 46, 0.2); color: #ffbd2e; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; white-space: nowrap;">🟠 Moyen (35 pts)</span>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <span class="tech-tag">Wireshark</span>
+                    <span class="tech-tag">Tshark</span>
+                    <span class="tech-tag">Réseau</span>
+                </div>
+
+                <!-- ZONE DE DÉCHIFFREMENT -->
+                <div class="decrypt-zone" id="zone-chal-1" style="background: #0d1117; padding: 15px; border-radius: 6px; border: 1px solid #2c3e50;">
+                    <p style="margin-top: 0; font-size: 0.9rem;">🔒 <strong>Write-Up verrouillé.</strong> Entrez le flag pour le déchiffrer :</p>
+                    <div style="display: flex; gap: 10px; margin-top: 10px;">
+                        <input type="text" id="flag-input-1" placeholder="RM{...}" style="flex: 1; padding: 8px 12px; border-radius: 4px; border: 1px solid #4a5568; background: #1e1e2f; color: white;">
+                        
+                        <!-- 👇 Remplace 'TON_BASE_64_ICI' par le résultat de ton script Python 👇 -->
+                        <button onclick="decryptWU('zone-chal-1', 'flag-input-1', 'TON_BASE_64_ICI')" class="btn" style="padding: 8px 20px;">Déchiffrer</button>
+                    </div>
+                    <p id="error-chal-1" style="color: #ff6b6b; font-size: 0.85rem; margin-top: 10px; display: none;">❌ Flag incorrect ou données corrompues.</p>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- CHALLENGE 2 : Autre exemple (Dump Mémoire) -->
+            <!-- ========================================== -->
+            <div class="card" style="text-align: left; cursor: default;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                    <div>
+                        <h3 style="margin-top: 0;">Dump Mémoire - L'Infiltré</h3>
+                        <p style="color: #a0aec0; font-size: 0.9rem; margin-top: 5px;">Recherche de malwares injectés dans un dump RAM Windows avec Volatility 3.</p>
+                    </div>
+                    <span style="background: rgba(255, 95, 86, 0.2); color: #ff5f56; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; white-space: nowrap;">🔴 Difficile (50 pts)</span>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <span class="tech-tag">Volatility 3</span>
+                    <span class="tech-tag">Windows</span>
+                </div>
+
+                <!-- ZONE DE DÉCHIFFREMENT -->
+                <div class="decrypt-zone" id="zone-chal-2" style="background: #0d1117; padding: 15px; border-radius: 6px; border: 1px solid #2c3e50;">
+                    <p style="margin-top: 0; font-size: 0.9rem;">🔒 <strong>Write-Up verrouillé.</strong> Entrez le flag pour le déchiffrer :</p>
+                    <div style="display: flex; gap: 10px; margin-top: 10px;">
+                        <!-- Attention : On incrémente les IDs (flag-input-2, zone-chal-2) -->
+                        <input type="text" id="flag-input-2" placeholder="RM{...}" style="flex: 1; padding: 8px 12px; border-radius: 4px; border: 1px solid #4a5568; background: #1e1e2f; color: white;">
+                        
+                        <button onclick="decryptWU('zone-chal-2', 'flag-input-2', 'UN_AUTRE_BASE_64_ICI')" class="btn" style="padding: 8px 20px;">Déchiffrer</button>
+                    </div>
+                    <p id="error-chal-2" style="color: #ff6b6b; font-size: 0.85rem; margin-top: 10px; display: none;">❌ Flag incorrect ou données corrompues.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-icons">
+            <!-- Email -->
+            <a href="mailto:alexandre.allairea@gmail.com" class="icon-circle" title="Mail">
+                <img src="../../../assets/img/mail.svg" alt="Icône Email" class="footer-img">
+            </a>
+            
+            <!-- GitHub -->
+            <a href="https://github.com/AlexandreA28" target="_blank" class="icon-circle" title="GitHub">
+                <img src="../../../assets/img/github.svg" alt="Icône GitHub" class="footer-img">
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/alexandre-allaire/" target="_blank" class="icon-circle" title="LinkedIn">
+                <img src="../../../assets/img/linkedin.svg" alt="Icône LinkedIn" class="footer-img">
+            </a>
+        </div>
+        
+        <p class="copyright">&copy; 2026 - Alexandre Allaire - Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

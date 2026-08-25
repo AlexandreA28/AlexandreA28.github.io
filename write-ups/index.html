@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Write-Ups - Alexandre Allaire</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/hero.js" defer></script>
+    <script src="../assets/js/navbar-spy.js" defer></script>
+    <script src="../assets/js/back-to-top.js" defer></script>
+    <script src="../assets/js/load.js" defer></script>
+</head>
+<body>
+
+    <!-- LOADER -->
+    <div id="loader" class="loader-overlay">
+        <div class="loader-content">
+            <span class="loader-text">INITIALIZING DATABASE...</span>
+            <div class="loader-blocks">
+                <span class="block"></span><span class="block"></span><span class="block"></span><span class="block"></span><span class="block"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- BARRE DE NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="../index.html#home">Alexandre Allaire</a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html#ctf">Retour</a>
+                <a href="#rootme">Root-Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER DU HUB -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-name">Write-Ups & CTF</h1>
+            <h2 class="hero-title">Base de connaissances et résolutions</h2>
+            <p class="hero-desc">
+                Documentation 100% fait main de mes résolutions de challenges.<br>L'objectif est de consolider mes acquis et de fournir des méthodes d'analyse et d'attaque réutilisables.
+            </p>
+        </div>
+    </header>
+
+    <!-- SECTION 1 : CHOIX DE LA PLATEFORME -->
+    <section id="rootme" class="section">
+        <h2>Root-Me</h2>
+        
+        <div class="grid-projects">
+            <!-- Catégorie App - Script -->
+            <a href="root-me/app-script/" class="card-wu">
+                <div class="card-header-inline">
+                    <img src="../assets/img/app-script.svg" class="icone-rootme">
+                    <h3>App - Script</h3>
+                </div>
+                
+                <p>Cette série d’épreuves vous confronte aux vulnérabilités liées à des faiblesses d’environnement, de configuration ou encore à des erreurs de développement dans des langages de script ou de programmation.</p>
+                <span class="tech-tag-wu" id="count-app-script">... Write-Ups</span>
+            </a>
+            
+            <!-- Catégorie Cracking -->
+            <a href="root-me/cracking/" class="card-wu">
+                <div class="card-header-inline">
+                    <img src="../assets/img/cracking.svg" class="icone-rootme">
+                    <h3>Cracking</h3>
+                </div>
+
+                <p>Ces challenges permettent de comprendre le sens du terme « langage compilé ». Ce sont des fichiers binaires à décortiquer pour aller chercher les instructions bas niveau permettant de répondre au problème posé.</p>
+                <span class="tech-tag-wu" id="count-cracking">... Write-Ups</span>
+            </a>
+            
+            <!-- Catégorie Forensic -->
+            <a href="root-me/forensic/" class="card-wu">
+                <div class="card-header-inline">
+                    <img src="../assets/img/forensic.svg" class="icone-rootme">
+                    <h3>Forensic</h3>
+                </div>
+                
+                <p>Ces challenges mettent à l’épreuve vos techniques d’investigations numériques en analysant des traces mémoire, des fichiers de journalisation, des captures réseaux...</p>
+                <span class="tech-tag-wu" id="count-forensic">... Write-Ups</span>
+            </a>
+            
+            <!-- Catégorie Programmation -->
+            <a href="root-me/programmation/" class="card-wu">
+                <div class="card-header-inline">
+                    <img src="../assets/img/programmation.svg" class="icone-rootme">
+                    <h3>Programmation</h3>
+                </div>
+                
+                <p>Automatisez des tâches de plus en plus complexes pour valider ces challenges en moins de quelques secondes.</p>
+                <span class="tech-tag-wu" id="count-programmation">... Write-Ups</span>
+            </a>
+
+            <!-- Catégorie Réaliste -->
+            <a href="root-me/realiste/" class="card-wu">
+                <div class="card-header-inline">
+                    <img src="../assets/img/realiste.svg" class="icone-rootme">
+                    <h3>Réaliste</h3>
+                </div>
+                
+                <p>Vous allez vous retrouver dans des environnements complets sur des thèmes divers et variés. À vous d’en comprendre le fonctionnement, d’identifier les faiblesses et de cibler les vulnérabilités à exploiter.</p>
+                <span class="tech-tag-wu" id="count-realiste">... Write-Ups</span>
+            </a>
+
+            <!-- Catégorie Stéganographie -->
+            <a href="root-me/steganographie/" class="card-wu">
+                <div class="card-header-inline">
+                    <img src="../assets/img/stegano.svg" class="icone-rootme">
+                    <h3>Stéganographie</h3>
+                </div>
+
+                <p>Si la cryptographie est l’art du secret, la stéganographie est l’art de la dissimulation : l’objet de la stéganographie n’est pas de rendre un message inintelligible aux personnes non autorisées mais de le faire passer inaperçu.</p>
+                <span class="tech-tag-wu" id="count-steganographie">... Write-Ups</span>
+            </a>
+
+            <!-- Catégorie Web - Client -->
+            <a href="root-me/web-client/" class="card-wu">
+                <div class="card-header-inline">
+                    <img src="../assets/img/web-client.svg" class="icone-rootme">
+                    <h3>Web - Client</h3>
+                </div>
+                
+                <p>Apprenez à exploiter les failles des applications web pour impacter leurs utilisateurs ou contourner des mécanismes de sécurité côté client.</p>
+                <span class="tech-tag-wu" id="count-web">... Write-Ups</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-icons">
+            <!-- Email -->
+            <a href="mailto:alexandre.allairea@gmail.com" class="icon-circle" title="Mail">
+                <img src="../assets/img/mail.svg" alt="Icône Email" class="footer-img">
+            </a>
+            
+            <!-- GitHub -->
+            <a href="https://github.com/AlexandreA28" target="_blank" class="icon-circle" title="GitHub">
+                <img src="../assets/img/github.svg" alt="Icône GitHub" class="footer-img">
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/alexandre-allaire/" target="_blank" class="icon-circle" title="LinkedIn">
+                <img src="../assets/img/linkedin.svg" alt="Icône LinkedIn" class="footer-img">
+            </a>
+        </div>
+        
+        <p class="copyright">&copy; 2026 - Alexandre Allaire - Tous droits réservés.</p>
+    </footer>
+
+    <!-- BOUTON RETOUR EN HAUT -->
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Retour en haut">
+       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+           <path d="M18 15l-6-6-6 6"/>
+       </svg>
+    </a>
+</body>
+</html>
