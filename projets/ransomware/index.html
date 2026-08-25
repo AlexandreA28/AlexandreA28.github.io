@@ -73,15 +73,48 @@
 
     <!-- SECTION 3 : L'ATTAQUE (Fond sombre pour alterner) -->
     <section id="attack" class="section bg-dark">
-        <h2>Infection</h2>
+        <h2>Attaque</h2>
         
         <div class="timeline-content" style="max-width: 800px; margin: 0 auto; text-align: left;">
-            <h3>Vecteur initial : Le BadUSB</h3>
-            <p>Explication de comment la clé se fait passer pour un clavier et injecte le script de téléchargement du payload...</p>
+            <h3>Vecteur initial : Usurpation matérielle via BadUSB Type A</h3>
+            <p>L'attaque repose sur l'usurpation d'identité matérielle (HID Emulation) via un microcontrôleur Raspberry Pi Pico (RP2040).<br>Reconnu par l'hôte comme un simple clavier standard, la clé contourne la sécurité de Windows 10 et exécute une séquence d'actions à grande vitesse :</p>
+            <ul style="margin-top: 10px; margin-bottom: 20px;">
+                <li><strong>Évasion :</strong> Désactivation de la protection antivirus via les paramètres Windows ('ms-settings:windowsdefender').</li>
+                <li><strong>Furtivité :</strong> Fermeture ciblée du processus 'explorer.exe' pour masquer les fenêtres pop-up liées à l'insertion de l'USB.</li>
+                <li><strong>Déploiement :</strong> Identification dynamique de la lettre du lecteur, copie du payload ('host.exe') vers le répertoire temporaire '\Windows\Temp', exécution puis suppression du fichier source.</li>
+            </ul>
+
+            <div style="text-align: center; margin: 30px 0;">
+                <img src="../../assets/img/rp2040_type_a.png" alt="Raspberry Pi Pico utilisé comme BadUSB" style="max-width: 60%; height: auto; border-radius: 20px; box-shadow: 0 8px 16px rgba(0,0,0,0.2);">
+                <p style="font-size: 1rem; color: #888; margin-top: 10px;"><em>La Raspberry Pi Pico (RP2040) utilisé pour l'attaque.</em></p>
+            </div>
             
             <br>
-            <h3>Le Ransomware Python</h3>
-            <p>Explication de ton système de chiffrement hybride AES/RSA pour empêcher la récupération des clés en mémoire...</p>
+
+            <h3>Ransomware Python (AES-CTR / RSA)</h3>
+            <p>L'exécutable déployé est un ransomware fait main conçu en Python implémentant une cryptographie hybride. L'objectif est de cibler le dossier utilisateur (<code>/Documents</code>), de chiffrer et d'ajouter l'extension <code>.crypted</code> aux fichiers, et de déposer une note de rançon sur le bureau.</p>
+            
+            <ul style="margin-top: 10px; margin-bottom: 20px;">
+                <li><strong>Chiffrement des données :</strong> Les fichiers sont chiffrés via <strong>AES en mode CTR (Counter)</strong>. Ce mode nécessite un <i>Nonce</i> (Number used once) pour garantir que deux fichiers identiques auront une signature chiffrée totalement différente via l'effet d'avalanche d'AES.</li>
+                <li><strong>Protection de la clé (PKCS#1 OAEP) :</strong> La clé symétrique AES est générée dynamiquement. Pour éviter sa récupération en mémoire, elle est immédiatement chiffrée avec une clé publique <strong>RSA 2048 bits</strong> embarquée dans le script.</li>
+                <li><strong>Structure du fichier :</strong> Le ransomware modifie l'en-tête de chaque fichier cible en y concaténant directement le Nonce (12 octets) et la clé AES chiffrée (256 octets) avant d'écrire le corps du fichier chiffré.</li>
+            </ul>
+
+            <h4>Génération des clés</h4>
+            <p>En amont de l'attaque, la paire d'asymétrie a été générée via OpenSSL :</p>
+            
+            <div class="code-block">
+                <span class="code-label">Bash</span>
+                <pre><code># Génération de la clé privée RSA (2048 bits)
+openssl genrsa -out private.key 2048
+
+# Extraction de la clé publique (à injecter dans le script Python)
+openssl rsa -in private.key -pubout -out public.key</code></pre>
+            </div>
+
+            <div class="warning-banner">
+                <p><strong>Note :</strong> Pour des raisons évidentes de sécurité, le code source du malware et le script du BadUSB ne sont et ne seront pas rendus publics.</p>
+            </div>
         </div>
     </section>
 
@@ -91,13 +124,19 @@
         
         <div class="timeline-content" style="max-width: 800px; margin: 0 auto; text-align: left;">
             <h3>Acquisition des preuves</h3>
-            <p>Comment tu as dumpé la RAM avec FTK Imager et extrait les artefacts avec KAPE...</p>
-            
+            <p>La RAM et le disque ont directement été retirés depuis les fichier de la VM VMware pour analyse.
             <br>
-            <h3>Analyse Mémoire (Volatility)</h3>
-            <p>Les plugins utilisés (windows.pslist, windows.cmdline...) pour retrouver la trace d'exécution du malware et potentiellement la clé AES si elle n'a pas été effacée assez vite.</p>
+            L'exécution des artéfacts a été faite avec KAPE et des modules EZ via cette commande :</p>
+            <div class="code-block">
+                <span class="code-label">CMD</span>
+                <pre style="white-space: pre-wrap; word-wrap: break-word;"><code>E:\KAPE> kape.exe --tsource C: --tdest E:\KAPE_Triage --tflush --target !KapeTriage,RemoteAdmin,GroupPolicy,LogFiles,RDPCache,StartupInfo,ThumbCache,USBDevicesLogs,WindowsIndexSearch,PowershellConsole,EventTraceLogs,WBEM,WER --mdest E:\KAPE_Modules --mflush --module !EZParser,"Analyseur&nbsp;WMI",PowerShell_Defender_Exclusions,PowerShell_Dns_Cache,PowerShell_NamedPipes,PowerShell_ProcessList_WMI,PowerShell_Startup_Commands,Powershell_Network_Connections_Status,Powershell_Network_Share,Powershell_SMBMapping,Powershell_Services_List,Powershell_User_List,Windows_ARPCache,Windows_IPConfig,Windows_NetStat,Windows_SystemInfo,Windows_qwinsta_RDPSessions,Windows_schtasks,SysInternals_PsInfo --vhdx DESKTOP-R89K9P2</code></pre>
+            </div>
+            <br>
+            <h3>Analyse Mémoire et Disque</h3>
+            <p>L'analyse est en cours...</p>
         </div>
-        <a href="index.html#analyse" class="btn">Rapport d'analyse ( En cours )</a>
+        <a href="javascript:void(0);" class="btn" style="cursor: not-allowed; opacity: 0.5; pointer-events: none;">Rapport d'analyse ( En cours )</a>
+        <!-- <a href="rapport_analyse_ransomware" class="btn">Rapport d'analyse ( En cours )</a> -->
     </section>
 
     <!-- FOOTER -->

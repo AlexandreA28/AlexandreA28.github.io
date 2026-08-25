@@ -1262,3 +1262,58 @@ footer {
     margin-bottom: 50px;
 }
 
+/* --- BLOC DE CODE BASH --- */
+.code-block {
+    background-color: #1e1e2f;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    margin: 20px 0;
+    text-align: left;
+    overflow: hidden;
+}
+
+.code-label {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 6px 15px;
+    color: #a0aec0;
+    font-size: 0.8rem;
+    font-family: monospace;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 15px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.code-block code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: #e2e8f0;
+    font-size: 0.95rem;
+}
+
+/* --- BANNIÈRE D'AVERTISSEMENT --- */
+.warning-banner {
+    background-color: rgba(255, 107, 107, 0.1);
+    border-left: 4px solid #ff6b6b;
+    border-radius: 4px;
+    padding: 15px 20px;
+    margin-top: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.warning-banner p {
+    margin: 0;
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.warning-banner strong {
+    color: #ff6b6b;
+}
