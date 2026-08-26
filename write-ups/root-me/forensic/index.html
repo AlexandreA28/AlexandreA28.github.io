@@ -51,7 +51,22 @@
 
         <div class="grid-wu">
 
-            <div class="card-wu-list" onclick="openModal('Capture moi ça', 'capture-moi-ca.txt.enc')" style="cursor: pointer;">
+            <div class="card-wu-list" onclick="openModal('Fichier supprimé', 'Fichier supprimé.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Fichier supprimé</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/veryeasy.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">5 Points</span>
+                </div>
+                
+                <p>Votre cousin a trouvé une clé USB à la bibliothèque ce matin.<br>
+                    Il n’est pas très doué avec les ordinateurs, alors il compte sur vous pour retrouver le propriétaire de cette clé !
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Capture moi ça', 'Capture moi ça.txt.enc')" style="cursor: pointer;">
                 <div class="card-header-inline" style="justify-content: center;">
                     <h3>Capture moi ça</h3>
                 </div>
@@ -148,6 +163,327 @@
                 Berthier, avant de procéder au moindre blocage des point d’exfiltration du programme malveillant sur les pare-feux.<br>
                 On voudrait s’assurer de connaitre tous les hostnames des C&C pour être certain de bloquer intégralement le flux et éventuellement retrouver d’autres postes infectés.<br>
                 Ca y est, on y est, désossez moi ce malware !
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('MasterKee', 'MasterKee.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>MasterKee</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/easy.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">15 Points</span>
+                </div>
+                
+                <p>Un collègue a mis en place un système utile sur sa nouvelle machine.<br>
+                    Il assure qu’il est le seul à pouvoir y accéder grâce à ce qu’il connaît mais vous voulez lui montrer que tout le monde pourrait y accéder sans même qu’il ne soit là.<br>
+                    Votre défi est donc de lui montrer que vous êtes capable de bien plus qu’il n’imagine.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Oh My Grub', 'Oh My Grub.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Oh My Grub</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/easy.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">15 Points</span>
+                </div>
+                
+                <p>Votre société a perdu les accès à un ancien serveur, malheureusement celui-ci contient des fichiers importants, à vous de les retrouver.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Docker layers', 'Docker layers.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Docker layers</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">20 Points</span>
+                </div>
+                
+                <p>J’ai perdu le mot de passe pour chiffrer mon fichier de secret. Peux-tu m’aider à le récupérer ?
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Exfiltration ICMP', 'Exfiltration ICMP.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Exfiltration ICMP</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">20 Points</span>
+                </div>
+                
+                <p>Votre SOC a détecté une intrusion réussie sur un serveur d’administration.<br>
+                    Les analystes N1 ont isolé la veille un trafic ICMP suspect.<br>
+                    L’équipe CSIRT déployée sur place a réussi à récupérer un binaire suspect, dont le nom semble lié directement à la détection du SOC.<br>
+                    Retrouvez la donnée exfiltrée !
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Windows - LDAP User KerbeRoastable', 'Windows - LDAP User KerbeRoastable.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Windows - LDAP User KerbeRoastable</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">20 Points</span>
+                </div>
+                
+                <p>Lors de vos investigations, vous récupérez une sauvegarde de l’annuaire LDAP de l’entreprise effectuée avec ldap2json.<br>
+                    Utilisez les informations présentes dans ce dump pour retrouver l’utilisateur Kerberoastable.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Windows - NTDS Extraction de secrets', 'Windows - NTDS Extraction de secrets.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Windows - NTDS Extraction de secrets</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">20 Points</span>
+                </div>
+                
+                <p>Vous avez une sauvegarde des bases de registres et du NTDS d’un serveur Windows hébergeant un Active Directory.<br>
+                    Pouvez-vous extraire ses secrets depuis ces fichiers ?
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Analyse de logs - attaque web', 'Analyse de logs - attaque web.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Analyse de logs - attaque web</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">25 Points</span>
+                </div>
+                
+                <p>Notre site web semble avoir été attaqué, mais notre administrateur système ne comprend pas les logs du serveur web.<br>
+                    Pouvez-vous retrouver les données qui ont été exfiltrées ?
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Supply chain attack - Docker', 'Supply chain attack - Docker.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Supply chain attack - Docker</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">25 Points</span>
+                </div>
+                
+                <p>Votre stagiaire DevOps a déployé un serveur Web en utilisant Docker.<br>
+                    Tout a l’air de bien fonctionner, cependant plusieurs alertes de sécurité sont remontées depuis ce serveur, même après réinstallation.<br>
+                    Pouvez-vous chercher la source du problème ?
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Trouvez le chat', 'Trouvez le chat.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Trouvez le chat</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">25 Points</span>
+                </div>
+                
+                <p>Le chat du président a été kidnappé par des indépendantistes.<br>
+                    Un suspect a été interpellé par la gendarmerie.<br>
+                    Il détenait sur lui une clef USB.<br>
+                    Essayez de faire parler cette clef et de trouver dans quelle ville est retenu ce chat !
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Vilain petit canard', 'Vilain petit canard.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Vilain petit canard</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">25 Points</span>
+                </div>
+                
+                <p>L’ordinateur du DSI semble avoir été compromis en interne.<br>
+                    Une étrange clé USB contenant un fichier binaire a été retrouvée sur le bureau du stagiaire.<br>
+                    Le DSI compte sur vous pour analyser ce fichier.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Windows - LDAP User ASRepRoastable', 'Windows - LDAP User ASRepRoastable.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Windows - LDAP User ASRepRoastable</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">25 Points</span>
+                </div>
+                
+                <p>Lors de vos investigations, vous récupérez une sauvegarde de l’annuaire LDAP de l’entreprise effectuée avec ldap2json.<br>
+                    Utilisez les informations présentes dans ce fichier pour retrouver l’utilisateur ASRepRoastable.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Active Directory - GPO', 'Active Directory - GPO.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Active Directory - GPO</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">30 Points</span>
+                </div>
+                
+                <p>Une capture réseau réalisée au démarrage d’une station de travail, membre d’un domaine Active Directory, a été effectuée lors d’un audit de sécurité.<br>
+                    Analysez cette capture et retrouvez le mot de passe de l’administrateur.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Exfiltration DNS', 'Exfiltration DNS.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Exfiltration DNS</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">30 Points</span>
+                </div>
+                
+                <p>Retrouvez les données exfiltrées.<br>
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Open My Vault', 'Open My Vault.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Open My Vault</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">30 Points</span>
+                </div>
+                
+                <p>Le DevOps de votre SI vous signale que le master Ansible a exécuté d’étranges playbooks sur des machines.<br>
+                    En prévention il dit avoir mis en maintenance le site et supprimé les clés SSH sur les nodes, mais qu’il n’a pas touché aux logs.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Trusted', 'Trusted.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Trusted</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">30 Points</span>
+                </div>
+                
+                <p>Vous êtes appelé afin d’investiguer une machine d’un employé.<br>
+                    Depuis quelque temps, il se passe des choses bizarres sur son ordinateur et cet employé a perdu accès à ses mots de passe.<br>
+                    Une première investigation a permis de confirmer la présence d’un individu malveillant sur la machine.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Web3 - Mets ton masque - Etape 1', 'Web3 - Mets ton masque - Etape 1.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Web3 - Mets ton masque - Etape 1</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">30 Points</span>
+                </div>
+                
+                <p>Le 12 Novembre 2022, nous avons pu récupérer un dump mémoire de la machine virtuelle du potentiel chef de bande qui était en fonctionnement.<br>
+                    Nous avons besoin de connaître quelques informations on-chain pour mieux analyser l’organisation de l’escroquerie.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Web3 - Mets ton masque - Etape 2', 'Web3 - Mets ton masque - Etape 2.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Web3 - Mets ton masque - Etape 2</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/hard.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">50 Points</span>
+                </div>
+                
+                <p>Après avoir identifié les suspects et les liens entre les personnes, il est grand temps de récupérer les fonds du wallet Ethereum.<br>
+                    Nous souhaiterions récupérer le couple clef publique/privée.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('C2 Mythic', 'C2 Mythic.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>C2 Mythic</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">35 Points</span>
+                </div>
+                
+                <p>Une de nos machines semble avoir été infectée par un agent de command and control.<br>
+                    Notre NIDS a été en mesure de capturer l’échange entre le serveur et notre machine.<br>
+                    Nous avons aussi pu récupérer l’agent en question.<br>
+                    Votre mission est de récupérer les informations qui ont été extraites.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Entretien à l’ANSSI', 'Entretien à l’ANSSI.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Entretien à l’ANSSI</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">35 Points</span>
+                </div>
+                
+                <p>Vous êtes convoqué au premier entretien pour un poste d’ingénieur en investigation numérique à l’ANSSI.<br>
+                    Pour les tests techniques, ils vous demandent d’analyser un fichier.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Second entretien à l’ANSSI', 'Second entretien à l’ANSSI.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Second entretien à l’ANSSI</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">50 Points</span>
+                </div>
+                
+                <p>Suite à votre premier entretien passé avec succès, vous êtes convoqué une nouvelle fois.<br>
+                    Vous devez analyser un nouveau fichier.
+                </p>
+            </div>
+
+            <div class="card-wu-list" onclick="openModal('Keylogger maison', 'Keylogger maison.txt.enc')" style="cursor: pointer;">
+                <div class="card-header-inline" style="justify-content: center;">
+                    <h3>Keylogger maison</h3>
+                </div>
+
+                <div class="wu-meta">
+                    <img src="../../../assets/img/medium.png" alt="Difficulté" class="wu-difficulty">
+                    <span class="wu-points">35 Points</span>
+                </div>
+                
+                <p>Retrouvez le contenu du fichier /tmp/flag.
                 </p>
             </div>
 
