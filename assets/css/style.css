@@ -1520,8 +1520,42 @@ footer {
     margin-bottom: 0;
     flex: 1;
     overflow: auto;
-    padding-bottom: 15px;
-    padding-right: 15px;
+}
+
+/* --- BARRES DE DÉFILEMENT PERSONNALISÉES (Scrollbars) --- */
+#modal-decrypted-content {
+    scrollbar-width: thin;
+    scrollbar-color: #00bfff #2c3e50;
+}
+
+#modal-decrypted-content::-webkit-scrollbar {
+    width: 18px;  
+    height: 18px; 
+}
+
+#modal-decrypted-content::-webkit-scrollbar-track {
+    background: #1e293b; 
+    border-radius: 10px;
+    
+    border-left: 10px solid #2c3e50;
+    border-top: 10px solid #2c3e50;
+    background-clip: padding-box;
+}
+
+#modal-decrypted-content::-webkit-scrollbar-thumb {
+    background: #00bfff;
+    border-radius: 10px;
+    
+    border-left: 10px solid #2c3e50;
+    border-top: 10px solid #2c3e50;
+    background-clip: padding-box;
+}
+
+#modal-decrypted-content::-webkit-scrollbar-thumb:hover {
+    background: #008cba;
+    border-left: 10px solid #2c3e50;
+    border-top: 10px solid #2c3e50;
+    background-clip: padding-box;
 }
 
 /* --- METADONNÉES DES WRITE-UPS (Points & Difficulté) --- */
