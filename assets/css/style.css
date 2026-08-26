@@ -1511,9 +1511,12 @@ footer {
 }
 
 #modal-decrypted-content {
-    white-space: pre-wrap;
+    white-space: pre;
+    overflow-x: auto;
     line-height: 1.6;
     font-family: inherit;
+    padding-right: 15px;
+    padding-bottom: 15px;
 }
 
 /* --- METADONNÉES DES WRITE-UPS (Points & Difficulté) --- */
