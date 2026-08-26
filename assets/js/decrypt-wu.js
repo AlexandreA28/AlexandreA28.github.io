@@ -8,8 +8,9 @@ function openModal(title, filename) {
     document.getElementById('modal-decrypt-form').style.display = 'block';
     document.getElementById('modal-decrypted-content').style.display = 'none';
     document.getElementById('modal-flag-input').value = '';
-    
     document.getElementById('wu-modal-overlay').style.display = 'flex';
+
+    document.body.style.overflow = 'hidden';
     
     setTimeout(() => document.getElementById('modal-flag-input').focus(), 100);
 }
@@ -17,6 +18,7 @@ function openModal(title, filename) {
 // 2. Fermer la modale
 function closeModal() {
     document.getElementById('wu-modal-overlay').style.display = 'none';
+    document.body.style.overflow = 'auto';
 }
 
 // 3. Fonction de déchiffrement
