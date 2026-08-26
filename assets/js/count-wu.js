@@ -22,6 +22,11 @@ async function updateWUCount(pageUrl, targetId) {
 
 // On lance les requêtes dès que la page principale a fini de charger
 document.addEventListener("DOMContentLoaded", () => {
+    updateWUCount('root-me/app-script/index.html', 'count-app-script');
+    updateWUCount('root-me/cracking/index.html', 'count-cracking');
     updateWUCount('root-me/forensic/index.html', 'count-forensic');
+    updateWUCount('root-me/programmation/index.html', 'count-programmation');
+    updateWUCount('root-me/realiste/index.html', 'count-realiste');
+    updateWUCount('root-me/steganographie/index.html', 'count-steganographie');
     updateWUCount('root-me/web-client/index.html', 'count-web');
 });
