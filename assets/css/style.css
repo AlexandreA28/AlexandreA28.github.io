@@ -1520,8 +1520,8 @@ footer {
     margin-bottom: 0;
     flex: 1;
     overflow: auto;
-    margin-top: 15px;
     padding-bottom: 15px;
+    padding-right: 15px;
 }
 
 /* --- METADONNÉES DES WRITE-UPS (Points & Difficulté) --- */
@@ -1529,11 +1529,10 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;            /* L'espace entre le badge des points et l'image */
-    margin-bottom: 15px;  /* Sépare les infos du texte de description */
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
-/* Le petit badge pour les points */
 .wu-points {
     background: rgba(0, 191, 255, 0.1);
     color: #00bfff;
@@ -1544,9 +1543,8 @@ footer {
     border: 1px solid rgba(0, 191, 255, 0.4);
 }
 
-/* Taille de l'image de difficulté */
 .wu-difficulty {
-    height: 22px; /* Ajuste cette valeur selon la taille réelle de tes images */
+    height: 22px;
     width: auto;
     object-fit: contain;
 }
