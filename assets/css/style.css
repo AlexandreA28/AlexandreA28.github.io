@@ -1415,6 +1415,19 @@ footer {
     color: #00bfff;
     font-size: 1.8rem;
     text-align: center;
+
+    min-height: 100px; 
+    
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    
+    margin-bottom: 5px;
+}
+
+.card-wu-list p {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 /* --- BOUTON SPÉCIFIQUE WRITE-UP --- */
@@ -1501,4 +1514,31 @@ footer {
     white-space: pre-wrap;
     line-height: 1.6;
     font-family: inherit;
+}
+
+/* --- METADONNÉES DES WRITE-UPS (Points & Difficulté) --- */
+.wu-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;            /* L'espace entre le badge des points et l'image */
+    margin-bottom: 15px;  /* Sépare les infos du texte de description */
+}
+
+/* Le petit badge pour les points */
+.wu-points {
+    background: rgba(0, 191, 255, 0.1);
+    color: #00bfff;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 1px solid rgba(0, 191, 255, 0.4);
+}
+
+/* Taille de l'image de difficulté */
+.wu-difficulty {
+    height: 22px; /* Ajuste cette valeur selon la taille réelle de tes images */
+    width: auto;
+    object-fit: contain;
 }
