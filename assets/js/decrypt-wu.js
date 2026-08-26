@@ -52,7 +52,7 @@ async function attemptDecrypt() {
         const dec = new TextDecoder();
         const decryptedHtml = dec.decode(decryptedBuffer);
         
-        document.getElementById('modal-decrypted-content').innerHTML = decryptedHtml
+        document.getElementById('modal-decrypted-content').textContent = decryptedHtml
         document.getElementById('modal-decrypt-form').style.display = 'none';
         document.getElementById('modal-decrypted-content').style.display = 'block';
 
